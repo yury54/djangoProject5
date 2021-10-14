@@ -1,0 +1,27 @@
+
+{% include "index.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load table_tags %}
+
+
+
+    <meta charset="UTF-8">
+    <title>Просмотр записанных на прием</title>
+</head>
+<body class="container">
+ {% csrf_token %}
+<h2 align="center">Список записанных</h2>
+ <div class="container" style="margin-top: 10px">
+
+            <br />
+            {% render_table people %}
+        </div>
+<script>
+
+</script>
+
+</body>
+
+</html>

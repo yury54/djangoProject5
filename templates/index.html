@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+{% load bootstrap3 %}      {# import bootstrap4/bootstrap3 #}
+    {% bootstrap_css %}         {# Embed Bootstrap CSS #}
+    {% bootstrap_javascript jquery='full' %}  {# Embed Bootstrap JS+jQuery #}
+    <meta charset="UTF-8">
+ {{ my_form.media }}
+    <title>Запись на прием в 32 каб ГКУ НСО ЦСПН г. Бердска</title>
+
+</head>
+<body>
+
+      <div class="container">
+<h4><a href="start.html">Запись на приём в <span class="badge bg-secondary">32 кабинет</span></a></h4>
+<h5>Ближайшая запись на {{ s_date}}</h5>
+
+
+
+        <ul class="nav nav-justified">
+          <li class="active"><a href="start.html">Страница записи</a></li>
+
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            Просмотр/Удаление/Печать
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <li><a class="dropdown-item" href="record.html">Просмотр всех записей</a></li>
+              <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="rec1.html">Просмотр/печать записей стола №1</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="rec2.html">Просмотр/печать записей стола №2</a></li>
+              <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="rec3.html">Просмотр/печать записей стола №3</a></li>
+              <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="rec4.html">Просмотр/печать записей стола №4</a></li>
+          </ul>
+            </li>
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            Настройки
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <li><a class="dropdown-item" href="stol.html">Сотрудники</a></li>
+              <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="holiday.html">Отпуск</a></li>
+            </ul>
+            </li>
+
+
+
+        </ul>
+
+      </div>
+
+

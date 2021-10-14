@@ -1,0 +1,92 @@
+{% load static %}
+{% include "index.html" %}
+<link href="/static/css/datetimepicker.css" type="text/css" media="all" rel="stylesheet">
+<script src="/static/js/bootstrap-datetimepicker.js"></script>
+<script src="/static/js/locales/bootstrap-datetimepicker.ru.js"></script>
+
+
+  <div class="container-fluid">
+
+
+<br>
+
+<br>
+
+<h3 class="text-center">Отпуск</h3>
+    <form class="form-horizontal" method="post" action="holiday_create/">
+        {% csrf_token %}
+
+
+        <div class="form-group">
+            <br>
+    <label class="control-label col-xs-3" for="Стол №">Стол №:</label>
+    <div class="col-xs-6">
+      <input type="number" class="form-control" name="stol" id="stol" placeholder="Введите номер стола">
+
+
+    </div>
+  </div>
+
+<div class="form-group">
+
+    <label class="control-label col-xs-3" for="Стол №">Отпуск с:</label>
+    <div class="col-xs-6">
+{{hol_form.date1}}
+
+</div>
+  </div>
+        <div class="form-group">
+
+    <label class="control-label col-xs-3" for="Стол №">Отпуск до:</label>
+    <div class="col-xs-6">
+{{hol_form.date2}}
+
+</div>
+  </div>
+
+<div class="form-group">
+    <div class="col-xs-offset-3 col-xs-6">
+      <input type="submit" class="btn btn-success" value="Запись">
+      <input type="reset" class="btn btn-primary" value="Очистить форму">
+    </div>
+  </div>
+
+
+    </form>
+
+</div>
+<br>
+<div class="col-xs-3"></div>
+  <div class="col-xs-6 ">
+   <table class="table table-bordered table-striped table-hover">
+        <thead>
+				<tr class="text-center">
+
+                    <td>Стол</td>
+                    <td>ФИО</td>
+                    <td>Отпуск с</td>
+                    <td>Отпуск до</td>
+                    <td>Удалить</td>
+
+				</tr>
+			</thead>
+			<tbody>
+             {% for item in holidays %}
+            <tr class="text-center">
+                    <td>{{item.stol }}</td>
+                    <td>{{item.fio }}</td>
+                    <td>{{item.date1 }}</td>
+                    <td>{{item.date2 }}</td>
+                    <td><a href="holiday_delete/{{item.id }}">Удалить
+                        <i class="glyphicon glyphicon-remove" aria-hidden="true"></i></a></td>
+
+
+            </tr>
+             {% endfor %}
+            </tbody>
+    </table>
+</div>
+</div>
+
+</body>
+</html>
